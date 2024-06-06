@@ -141,6 +141,7 @@ header {
 #about {
   background-color: $background-color;
   width: 100%;
+  padding: 20px;
   @media screen and (min-width: 800px) {
     display: flex;
   }
@@ -329,7 +330,7 @@ footer .footer-content {
 
 #footer-instagram {
   justify-content: center;
-  
+
   @media screen and (min-width: 800px) {
     justify-content: start;
   }
