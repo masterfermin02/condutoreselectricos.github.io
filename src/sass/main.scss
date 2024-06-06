@@ -140,11 +140,15 @@ header {
 
 #about {
   background-color: $background-color;
-  width: 100%;
   padding: 20px;
   @media screen and (min-width: 800px) {
     display: flex;
   }
+}
+
+img {
+  width: 100%;
+  height: auto;
 }
 
 .gmap_iframe {
@@ -309,6 +313,16 @@ footer .footer-content {
     display: flex;
     gap: 20px;
     justify-content: center;
+  }
+}
+
+footer .footer-content .footer-content-item {
+  text-align: center;
+  font-size: small;
+  display: block;
+  @media screen and (min-width: 800px) {
+    display: flex;
+    gap: 20px;
   }
 }
 
