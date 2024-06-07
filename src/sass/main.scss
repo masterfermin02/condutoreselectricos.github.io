@@ -121,7 +121,13 @@ header {
   }
 }
 
+#btn-contact {
+  padding: 20px 40px;
+}
+
 .btn {
+  width: 100%;
+  max-height: 500px;
   padding: 20px 10px;
   background-color: transparent;
   color: $tertiary-color;
@@ -131,7 +137,6 @@ header {
   font-weight: bold;
   font-size: larger;
   max-width: 250px;
-  max-height: 85px;
   
   &:hover {
     background-color: $secondary-color-dark;
@@ -143,8 +148,6 @@ header {
 }
 
 .btn-primary {
-  width: 100%;
-  max-height: 500px;
   background-color: $primary-color;
   color: $text-color;
 }
