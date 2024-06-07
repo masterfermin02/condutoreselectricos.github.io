@@ -205,7 +205,8 @@ img {
 
 .services-item p {
   font-size: 1em;
-  color: #333;
+  color: $secondary-color;
+  font-weight: bold;
 }
 
 /* Contact Section */
@@ -418,4 +419,10 @@ footer a:hover {
 
 .p-right-20 {
   padding-right: 20px;
+}
+
+.contact-text-align-left {
+  @media screen and (min-width: 800px) {
+    text-align: left;
+  }
 }
