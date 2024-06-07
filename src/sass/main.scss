@@ -106,8 +106,19 @@ header {
   }
 }
 
+#btn-show-more {
+  margin-inline: auto;
+  @media screen and (min-width: 800px){
+    margin-inline: inherit;
+  }
+}
+
 .hero-header-text {
-  margin-top: 80px;
+  text-align: center;
+  @media screen and (min-width: 800px) {
+    margin-top: 80px;
+    text-align: left;
+  }
 }
 
 .btn {
@@ -249,10 +260,21 @@ img {
 
 .logo-image {
   width: 100%;
-  max-width: 40px;
-  height: auto;
-  padding-right: 60px;
-  padding-top: 10px;
+  max-width: 100px;
+
+  @media screen and (min-width: 800px){
+    max-width: 40px;
+    height: auto;
+    padding-right: 60px;
+    padding-top: 10px;
+  }
+}
+
+.logo-text {
+  display: none;
+  @media screen and (min-width: 800px) {
+    display: block;
+  }
 }
 
 a {
@@ -262,6 +284,10 @@ a {
     color: $secondary-color;
     text-decoration: underline $secondary-color;
   }
+}
+
+.logo {
+  margin-inline: auto;
 }
 
 .logo a {
