@@ -33,16 +33,6 @@ img, video, svg {
   height: auto;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-    transition: none !important;
-  }
-}
-
 h1 {
   color: $primary-color;
   line-height: 70px;
@@ -413,7 +403,7 @@ footer .footer-content .footer-content-item {
 #footer-instagram {
   justify-content: center;
   margin-top: 10px;
-  
+
   @media screen and (min-width: 800px) {
     justify-content: start;
   }

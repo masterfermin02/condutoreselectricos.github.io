@@ -33,15 +33,6 @@ img, video, svg {
   height: auto;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-    transition: none !important;
-  }
-}
 h1 {
   color: #1d3864;
   line-height: 70px;
