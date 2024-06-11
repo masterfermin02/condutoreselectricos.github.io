@@ -1,6 +1,10 @@
 @import 'normalize.css';
 @import 'variables';
 
+body {
+  -webkit-overflow-scrolling: touch
+}
+
 h1 {
   color: $primary-color;
   line-height: 70px;
