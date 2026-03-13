@@ -105,26 +105,27 @@
       '  uv.x *= u_resolution.x / max(u_resolution.y, 1.0);',
       '  vec2 pointer = u_pointer;',
       '  pointer.x *= u_resolution.x / max(u_resolution.y, 1.0);',
-      '  float pointerField = 1.0 - smoothstep(0.0, 0.58, distance(uv, pointer));',
+      '  float pointerField = 1.0 - smoothstep(0.0, 0.52, distance(uv, pointer));',
       '',
-      '  uv.y += (pointerField - 0.25) * 0.05;',
-      '  float flowA = band(uv, 0.0, 0.10, 0.95, 0.028);',
-      '  float flowB = band(uv, 2.1, 0.075, 1.25, 0.022);',
-      '  float flowC = band(uv, 4.4, 0.055, 1.6, 0.017);',
-      '  float pulse = 0.5 + 0.5 * sin(u_time * 1.6);',
-      '  float energy = (flowA * 0.65) + (flowB * 0.85) + (flowC * 1.05);',
-      '  energy += spark(uv, vec2(0.52 + 0.08 * sin(u_time * 0.45), 0.48), 0.024 + pulse * 0.016);',
-      '  energy += spark(uv, vec2(1.18 + 0.05 * cos(u_time * 0.5), 0.34 + 0.04 * sin(u_time)), 0.014);',
-      '  energy += pointerField * 0.28;',
+      '  uv.y += (pointerField - 0.22) * 0.025;',
+      '  float flowA = band(uv, 0.0, 0.082, 0.9, 0.024);',
+      '  float flowB = band(uv, 2.1, 0.06, 1.15, 0.019);',
+      '  float flowC = band(uv, 4.4, 0.042, 1.42, 0.014);',
+      '  float pulse = 0.5 + 0.5 * sin(u_time * 1.35);',
+      '  float energy = (flowA * 0.56) + (flowB * 0.72) + (flowC * 0.9);',
+      '  energy += spark(uv, vec2(0.52 + 0.06 * sin(u_time * 0.4), 0.48), 0.016 + pulse * 0.01);',
+      '  energy += spark(uv, vec2(1.18 + 0.03 * cos(u_time * 0.45), 0.34 + 0.02 * sin(u_time)), 0.009);',
+      '  energy += pointerField * 0.11;',
       '',
-      '  vec3 base = u_primary * (0.16 + (localUv.y * 0.22));',
-      '  vec3 glow = mix(u_primary, u_accent, clamp(energy * 0.65, 0.0, 1.0));',
+      '  vec3 base = u_primary * (0.15 + (localUv.y * 0.2));',
+      '  float accentMix = smoothstep(0.48, 1.15, energy);',
+      '  vec3 glow = mix(u_primary, u_accent, accentMix);',
       '  vec3 color = base + (glow * energy * u_intensity);',
       '',
       '  float vignette = smoothstep(1.45, 0.18, distance(uv, vec2(0.9, 0.5)));',
-      '  color *= 0.72 + (vignette * 0.36);',
+      '  color *= 0.76 + (vignette * 0.28);',
       '',
-      '  gl_FragColor = vec4(color, 0.86);',
+      '  gl_FragColor = vec4(color, 0.8);',
       '}'
     ].join('\n');
 
@@ -192,16 +193,16 @@
       var theme = canvas.getAttribute('data-energy-theme');
       var config = theme === 'cta'
         ? {
-            primary: [0.10, 0.20, 0.36],
-            accent: [0.69, 0.84, 0.98],
-            intensity: 0.72,
-            speed: 0.82
+            primary: [0.08, 0.18, 0.31],
+            accent: [0.58, 0.72, 0.88],
+            intensity: 0.52,
+            speed: 0.68
           }
         : {
-            primary: [0.00, 0.11, 0.27],
-            accent: [0.99, 0.70, 0.04],
-            intensity: 0.98,
-            speed: 1.0
+            primary: [0.01, 0.10, 0.24],
+            accent: [0.92, 0.62, 0.08],
+            intensity: 0.74,
+            speed: 0.84
           };
 
       instances.push({
@@ -275,8 +276,8 @@
 
       instances.forEach(function (instance) {
         var gl = instance.gl;
-        instance.pointerCurrent.x += (instance.pointerTarget.x - instance.pointerCurrent.x) * 0.035;
-        instance.pointerCurrent.y += (instance.pointerTarget.y - instance.pointerCurrent.y) * 0.035;
+        instance.pointerCurrent.x += (instance.pointerTarget.x - instance.pointerCurrent.x) * 0.02;
+        instance.pointerCurrent.y += (instance.pointerTarget.y - instance.pointerCurrent.y) * 0.02;
         gl.useProgram(instance.program);
         gl.bindBuffer(gl.ARRAY_BUFFER, instance.buffer);
         gl.enableVertexAttribArray(instance.position);

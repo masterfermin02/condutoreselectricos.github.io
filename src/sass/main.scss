@@ -1,4 +1,4 @@
-@import 'normalize.css';
+@import '../../node_modules/normalize.css/normalize';
 @import 'variables';
 
 *,
@@ -356,13 +356,13 @@ h3 {
   height: 100%;
   pointer-events: none;
   z-index: 1;
-  opacity: 0.48;
+  opacity: 0.38;
 }
 
 .webgl-energy--hero {
   mix-blend-mode: screen;
   mask-image: linear-gradient(90deg, black 0%, black 68%, transparent 100%);
-  opacity: 0.56;
+  opacity: 0.46;
 }
 
 .hero__backdrop {
@@ -705,7 +705,7 @@ h3 {
 }
 
 .webgl-energy--cta {
-  opacity: 0.34;
+  opacity: 0.24;
   mix-blend-mode: screen;
   mask-image: radial-gradient(circle at center, black 22%, rgba(0, 0, 0, 0.9) 62%, transparent 100%);
 }
