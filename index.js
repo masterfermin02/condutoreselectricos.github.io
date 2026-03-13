@@ -63,6 +63,47 @@
     });
   };
 
+  var animateStats = function () {
+    if (!ScrollTrigger) {
+      return;
+    }
+
+    var statValues = document.querySelectorAll('.stats .stat strong');
+    if (!statValues.length) {
+      return;
+    }
+
+    statValues.forEach(function (node) {
+      var rawValue = (node.textContent || '').trim();
+      var match = rawValue.match(/^(\d+)(\+?)$/);
+      if (!match) {
+        return;
+      }
+
+      var target = parseInt(match[1], 10);
+      var suffix = match[2] || '';
+      node.textContent = '0' + suffix;
+
+      gsap.to(
+        { value: 0 },
+        {
+          value: target,
+          duration: target >= 100 ? 1.8 : 1.2,
+          ease: 'power2.out',
+          snap: { value: 1 },
+          scrollTrigger: {
+            trigger: node.closest('.stats'),
+            start: 'top 82%',
+            once: true
+          },
+          onUpdate: function () {
+            node.textContent = Math.round(this.targets()[0].value) + suffix;
+          }
+        }
+      );
+    });
+  };
+
   var initWebGLEnergy = function () {
     if (webglStarted) {
       return;
@@ -443,6 +484,7 @@
   animateOnScroll('.js-reveal-up', { y: 48, opacity: 0 });
   animateOnScroll('.js-reveal-left', { x: -56, opacity: 0 });
   animateOnScroll('.js-reveal-right', { x: 56, opacity: 0 });
+  animateStats();
 
   var serviceCards = document.querySelectorAll('.js-service-card');
   if (serviceCards.length && ScrollTrigger) {
