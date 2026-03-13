@@ -36,21 +36,46 @@
     gtag('config', 'G-8P5W476LVN');
   </script>
 </head>
-<body>
+<body class="is-loading">
+  <div class="preloader" aria-hidden="true">
+    <div class="preloader__grid"></div>
+    <div class="preloader__content">
+      <div class="preloader__wire preloader__wire--left"></div>
+      <div class="preloader__core">
+        <div class="preloader__halo"></div>
+        <div class="preloader__pulse"></div>
+        <div class="preloader__sparks">
+          <span class="preloader__spark preloader__spark--1"></span>
+          <span class="preloader__spark preloader__spark--2"></span>
+          <span class="preloader__spark preloader__spark--3"></span>
+          <span class="preloader__spark preloader__spark--4"></span>
+        </div>
+        <div class="preloader__logo-shell">
+          <div class="preloader__scan"></div>
+          <img class="preloader__logo" src="/img/logo-icon.png" alt="" />
+        </div>
+      </div>
+      <div class="preloader__wire preloader__wire--right"></div>
+    </div>
+    <div class="preloader__caption">
+      <span class="preloader__caption-line"></span>
+      <p>energizando soluciones</p>
+    </div>
+  </div>
   <header class="site-header">
     <div class="shell site-header__inner">
-      <a class="brand" href="#home" aria-label="Conductores Eléctricos">
+      <a class="brand js-brand" href="#home" aria-label="Conductores Eléctricos">
         <img class="brand__mark" src="/img/logo-icon.png" alt="Logo Conductores Eléctricos" />
         <span class="brand__text">Conductores El&eacute;ctricos</span>
       </a>
-      <nav class="site-nav" aria-label="Principal">
+      <nav class="site-nav js-nav" aria-label="Principal">
         <a href="#home">Inicio</a>
         <a href="#about">Historia</a>
         <a href="#services">Servicios</a>
         <a href="#location">Ubicaci&oacute;n</a>
         <a href="#footer">Contacto</a>
       </nav>
-      <div class="site-header__actions">
+      <div class="site-header__actions js-header-actions">
         <a class="btn btn--ghost" href="#services">Cat&aacute;logo</a>
         <a class="btn btn--primary" href="https://wa.me/+18292216728?text=Hola me interesa saber sobre los servicios o electricos. Mensaje enviado desde el sitio web." target="_blank" rel="noreferrer">Solicitar cotizaci&oacute;n</a>
       </div>
@@ -59,19 +84,20 @@
 
   <main>
     <section id="home" class="hero">
+      <canvas class="webgl-energy webgl-energy--hero js-webgl-energy" data-energy-theme="hero" aria-hidden="true"></canvas>
       <div class="hero__backdrop"></div>
       <div class="shell hero__content">
         <div class="hero__copy">
-          <p class="eyebrow">Distribuci&oacute;n especializada desde 1994</p>
-          <h1>Conductores y materiales el&eacute;ctricos para proyectos que exigen <span>precisi&oacute;n t&eacute;cnica</span>.</h1>
-          <p class="hero__lead">Con 30 años en el mercado dedic&aacute;ndonos a la distribuci&oacute;n de materiales el&eacute;ctricos al por mayor y al detalle, apoyamos obras industriales, comerciales y residenciales con respuesta r&aacute;pida y criterio experto.</p>
-          <div class="hero__actions">
+          <p class="eyebrow js-hero-eyebrow">Distribuci&oacute;n especializada desde 1994</p>
+          <h1 class="js-hero-title">Conductores y materiales el&eacute;ctricos para proyectos que exigen <span>precisi&oacute;n t&eacute;cnica</span>.</h1>
+          <p class="hero__lead js-hero-lead">Con 30 años en el mercado dedic&aacute;ndonos a la distribuci&oacute;n de materiales el&eacute;ctricos al por mayor y al detalle, apoyamos obras industriales, comerciales y residenciales con respuesta r&aacute;pida y criterio experto.</p>
+          <div class="hero__actions js-hero-actions">
             <a href="#services" class="btn btn--primary">Nuestros servicios</a>
             <a href="#about" class="btn btn--secondary">Conocer historia</a>
           </div>
         </div>
 
-        <aside class="hero-card">
+        <aside class="hero-card js-hero-card">
           <div class="hero-card__icon">
             <span class="material-symbols-outlined">bolt</span>
           </div>
@@ -84,14 +110,14 @@
 
     <section id="about" class="section section--light">
       <div class="shell split-layout">
-        <div class="media-card">
+        <div class="media-card js-reveal-left">
           <img src="/img/history-image.png" alt="Historia Conductores Eléctricos" />
           <div class="media-card__badge">
             <strong>1994</strong>
             <span>Año de fundaci&oacute;n</span>
           </div>
         </div>
-        <div class="section-copy">
+        <div class="section-copy js-reveal-right">
           <p class="eyebrow">Nuestra trayectoria</p>
           <h2>Tres d&eacute;cadas de crecimiento sostenido en el sector el&eacute;ctrico.</h2>
           <p>Conductores El&eacute;ctricos nace en el año 1994 en la ciudad de Santiago de los Caballeros, como iniciativa de Radham&eacute;s Dom&iacute;nguez, al percatarse que en esta ciudad exist&iacute;a una baja oferta de materiales el&eacute;ctricos especializados.</p>
@@ -116,7 +142,7 @@
 
     <section id="services" class="section section--muted">
       <div class="shell">
-        <div class="section-heading">
+        <div class="section-heading js-reveal-up">
           <div>
             <p class="eyebrow">Servicios</p>
             <h2>Soluciones integrales para abastecer, orientar e instalar.</h2>
@@ -125,7 +151,7 @@
         </div>
 
         <div class="service-grid">
-          <article class="service-card">
+          <article class="service-card js-service-card">
             <div class="service-card__image">
               <img src="/img/Venta_de_materiales_eléctricos.png" alt="Venta de materiales eléctricos" />
             </div>
@@ -136,7 +162,7 @@
             </div>
           </article>
 
-          <article class="service-card">
+          <article class="service-card js-service-card">
             <div class="service-card__image">
               <img src="/img/Asesoría_de_abasteciminto.png" alt="Asesoría de abastecimiento" />
             </div>
@@ -147,7 +173,7 @@
             </div>
           </article>
 
-          <article class="service-card">
+          <article class="service-card js-service-card">
             <div class="service-card__image">
               <img src="/img/Asesoría_de_instalación.png" alt="Instalaciones electromecánicas" />
             </div>
@@ -163,33 +189,33 @@
 
     <section id="location" class="section section--light">
       <div class="shell location-layout">
-        <div class="section-copy">
+        <div class="section-copy js-reveal-left">
           <p class="eyebrow">Ubicaci&oacute;n y contacto</p>
           <h2>Vis&iacute;tanos en Santiago de los Caballeros.</h2>
           <p>Estamos ubicados en la Av. Bartolom&eacute; Col&oacute;n #15, Santiago de los Caballeros 51000, con atenci&oacute;n para proyectos, pedidos y consultas t&eacute;cnicas.</p>
           <div class="contact-list">
-            <div class="contact-item">
+            <div class="contact-item js-contact-item">
               <span class="material-symbols-outlined">location_on</span>
               <div>
                 <strong>Direcci&oacute;n</strong>
                 <p>Av. Bartolom&eacute; Col&oacute;n #15, Santiago de los Caballeros 51000</p>
               </div>
             </div>
-            <div class="contact-item">
+            <div class="contact-item js-contact-item">
               <span class="material-symbols-outlined">mail</span>
               <div>
                 <strong>Correo</strong>
                 <p><a href="mailto:conductoreselectricos.srl@gmail.com">conductoreselectricos.srl@gmail.com</a></p>
               </div>
             </div>
-            <div class="contact-item">
+            <div class="contact-item js-contact-item">
               <span class="material-symbols-outlined">call</span>
               <div>
                 <strong>Tel&eacute;fonos</strong>
                 <p><a href="tel:+18095839368">809-583-9368</a> / <a href="https://wa.me/+18292216728?text=Hola me interesa saber sobre los servicios o electricos. Mensaje enviado desde el sitio web." target="_blank" rel="noreferrer">829-221-6728</a></p>
               </div>
             </div>
-            <div class="contact-item">
+            <div class="contact-item js-contact-item">
               <span class="material-symbols-outlined">schedule</span>
               <div>
                 <strong>Horario</strong>
@@ -199,7 +225,7 @@
           </div>
         </div>
 
-        <div class="map-card">
+        <div class="map-card js-reveal-right">
           <iframe
             class="map-card__frame"
             title="Mapa Conductores Eléctricos"
@@ -211,7 +237,8 @@
     </section>
 
     <section class="cta">
-      <div class="shell cta__inner">
+      <canvas class="webgl-energy webgl-energy--cta js-webgl-energy" data-energy-theme="cta" aria-hidden="true"></canvas>
+      <div class="shell cta__inner js-cta">
         <p class="eyebrow eyebrow--dark">Cotizaci&oacute;n directa</p>
         <h2>¿Listo para abastecer su pr&oacute;ximo proyecto?</h2>
         <p>Converse con nosotros para validar materiales, disponibilidad y tiempos de entrega seg&uacute;n su requerimiento.</p>
@@ -222,12 +249,12 @@
 
   <footer id="footer" class="site-footer">
     <div class="shell site-footer__grid">
-      <div class="site-footer__brand">
+      <div class="site-footer__brand js-footer-item">
         <img src="/img/CElogo.png" alt="Conductores Eléctricos" />
         <p>L&iacute;deres en distribuci&oacute;n e instalaci&oacute;n de materiales el&eacute;ctricos con atenci&oacute;n cercana, respuesta r&aacute;pida y experiencia acumulada en m&aacute;s de tres d&eacute;cadas.</p>
       </div>
 
-      <div>
+      <div class="js-footer-item">
         <h3>Empresa</h3>
         <ul>
           <li><a href="#about">Historia</a></li>
@@ -237,7 +264,7 @@
         </ul>
       </div>
 
-      <div>
+      <div class="js-footer-item">
         <h3>Contacto</h3>
         <ul>
           <li><a href="tel:+18095839368">809-583-9368</a></li>
@@ -249,9 +276,12 @@
     </div>
 
     <div class="shell site-footer__bottom">
-      <p>&copy; 2024 Conductores El&eacute;ctricos. Todos los derechos reservados.</p>
+      <p>&copy; <span id="current-year">2026</span> Conductores El&eacute;ctricos. Todos los derechos reservados.</p>
       <span>Rep&uacute;blica Dominicana</span>
     </div>
   </footer>
+  <script src="/dist/js/vendor/gsap.min.js"></script>
+  <script src="/dist/js/vendor/ScrollTrigger.min.js"></script>
+  <script src="/index.js"></script>
 </body>
 </html>
